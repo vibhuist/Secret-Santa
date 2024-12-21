@@ -7,7 +7,7 @@ def read_csv(file_path):
     """
     Reads and validates the participants CSV.
     """
-    data = pd.read_csv(file_path)
+    data = pd.read_csv(file_path, encoding='latin1')
     required_columns = {'Name', 'Address', 'Phone', 'Preferences'}
     if not required_columns.issubset(data.columns):
         raise ValueError(
@@ -35,7 +35,7 @@ def read_forbidden_pairs(file_path):
     Returns a set of tuples (santa, child) that are disallowed.
     If the CSV is empty, returns an empty set.
     """
-    forbidden_df = pd.read_csv(file_path)
+    forbidden_df = pd.read_csv(file_path, encoding='latin1')
     
     # If the file is empty or has no rows, return an empty set
     if forbidden_df.empty:
@@ -91,8 +91,9 @@ def generate_message(santa, child_details):
     """
     Generates a casual, friendly Secret Santa message.
     """
+    santa_first_name = santa['Name'].split()[0].capitalize()
     return (
-        f"🎅🎁 Hey hey, Santa *{santa['Name']}*! You've got a Child! 🎄\n\n"
+        f"🎅🎁 Hey hey, Santa *{santa_first_name}*! You've got a Child! 🎄\n\n"
         f"📚 *Your Child has described their book preference as*: {child_details['Preferences']}\n\n"
         f"Here’s everything you need to know about your Child:\n"
         f"👤 *Name*: {child_details['Name']}\n"

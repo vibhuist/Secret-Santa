@@ -15,3 +15,7 @@ logs/
 # OS-specific
 .DS_Store
 Thumbs.db
+
+# Add files or directories to ignore
+/Users/vibhu/PycharmProjects/Secret-Santa/data/participants-byob.csv
+/Users/vibhu/PycharmProjects/Secret-Santa/data/forbidden_pairs-byob.csv
