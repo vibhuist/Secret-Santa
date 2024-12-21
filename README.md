@@ -1,11 +1,18 @@
 # Secret Santa with Forbidden Pairs 🎅🎁
 
-A Python script to organize a Secret Santa event among participants, ensuring:
+### Background
+
+This script is useful for organizing a Secret Santa campaign where each participant is assigned a Santa and a Child to gift a book to. The script ensures the following conditions:
+
 1. **No participant is assigned to themselves.**
-2. **No mutual Santa-Child assignments.**
+2. **No mutual Santa-Child assignments.** (two individuals are not each others Santa-Child respectively)
 3. **No forbidden pairs** (some participants should never be assigned to each other).
 
-Additionally, the script generates personalized WhatsApp-ready messages with instructions and addresses.
+> 💡 **Tip**: Forbidden pairs can be useful in scenarios where certain participants should not be assigned to each other, such as spouses, family members, or close friends. This ensures that the Secret Santa game remains fun and engaging, as both the Santa and the recipient are strangers to each other, adding an element of surprise and excitement.
+
+4. **Ensures a single loop among participants.** (Each participant is part of a single continuous loop, ensuring everyone is both a Santa and a Child)
+
+Additionally, all Santa-Child relationships are saved in `logs/santa_pairs_log.txt`, and the messages to be shared with Santas are stored in `secret_santa_messages.txt`.
 
 ---
 
@@ -112,13 +119,45 @@ Alice,Bob
 ```
 
 ---
+## Sample Pair Output 📄
 
-## Contributing 🤝
+After running the script, a sample output in `logs/santa_pairs_log.txt` might look like this:
 
-1. Fork the repository.
-2. Create a new feature branch.
-3. Commit and push changes to your branch.
-4. Open a Pull Request with a detailed description.
+```plaintext
+Santa,Child
+Alice,Charlie
+Bob,Diana
+Charlie,Bob
+Diana,Alice
+```
+## Sample Output Message 📬
+
+After running the script, a sample message in `secret_santa_messages.txt` might look like this:
+
+```plaintext
+🎅🎁 Hey hey, Santa *Alice*! You've got a Child! 🎄
+
+📚 *Your Child has described their book preference as*: Horror
+
+Here’s everything you need to know about your Child:
+👤 *Name*: Charlie
+📞 *Phone*: 5555555555
+🏠 *Address*: 789 Maple St
+
+⏰ *Important*: Please send the book(s) by *22nd December*! 📦
+📸 Once sent, share the speed post receipt and tracking number with *Vibhu*.
+🤔 Not sure if you can do this? Let *Vibhu* know ASAP!
+
+✨ *Some tips to make it awesome*:
+1️⃣ Keep your name as Santa and address *Anonymous*! 😎
+2️⃣ Don’t spill the beans about your Child to other Santas. 🤐
+3️⃣ Don’t reach out to your Child before sending their gift. 📵
+4️⃣ Wrap the book if you can—it’s always more fun to unwrap! 🎀
+5️⃣ One book under ₹400 is perfect, but if you’re feeling generous, go for more! 💝
+
+🎉 Have fun and make your Child’s day special! 🌟
+Keep it magical! ✨ Merry Christmas and happy gifting! 🎅🎄
+```
 
 ---
 
