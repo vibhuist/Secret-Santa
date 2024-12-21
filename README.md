@@ -27,7 +27,7 @@ Additionally, all Santa-Child relationships are saved in `logs/santa_pairs_log.t
 ## Project Structure 📂
 
 ```plaintext
-secret-santa-forbidden/
+secret-santa/
 ├── LICENSE                 # Project license (MIT by default)
 ├── README.md               # Documentation and usage instructions
 ├── requirements.txt        # Dependencies for the project
