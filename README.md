@@ -45,8 +45,8 @@ secret-santa-forbidden/
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/<YourUsername>/secret-santa-forbidden.git
-   cd secret-santa-forbidden
+   git clone https://github.com/vibhuist/Secret-Santa.git
+   cd Secret-Santa
    ```
 
 2. **Install dependencies**:
