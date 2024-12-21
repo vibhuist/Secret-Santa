@@ -1,6 +1,7 @@
 import pandas as pd
 import random
 import sys
+import os
 
 def read_csv(file_path):
     """
@@ -92,7 +93,7 @@ def generate_message(santa, child_details):
     """
     return (
         f"🎅🎁 Hey hey, Santa *{santa['Name']}*! You've got a Child! 🎄\n\n"
-        f"📚 *Your Child’s book preference*: {child_details['Preferences']}\n\n"
+        f"📚 *Your Child has described their book preference as*: {child_details['Preferences']}\n\n"
         f"Here’s everything you need to know about your Child:\n"
         f"👤 *Name*: {child_details['Name']}\n"
         f"📞 *Phone*: {child_details['Phone']}\n"
@@ -125,6 +126,7 @@ def save_messages(participants, santa_pairs, output_file="secret_santa_messages.
     print(f"Messages saved to {output_file}")
 
 def main():
+
     input_file = "data/participants.csv"
     forbidden_file = "data/forbidden_pairs.csv"
     output_file = "secret_santa_messages.txt"
